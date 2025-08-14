@@ -1,32 +1,32 @@
 # Switch2Any
 
-一个VSCode扩展，允许您通过快捷键快速打开不同的应用程序。
+A VSCode extension that allows you to quickly open different applications via keyboard shortcuts.
 
-## 功能特性
+## Features
 
-- 🚀 通过快捷键快速打开应用程序
-- ⚙️ 可配置的应用程序列表
-- 🎯 支持自定义快捷键
-- 📱 支持macOS系统
-- 🛠️ 支持JetBrains产品，可跳转到当前光标位置
+- 🚀 Quickly open applications via keyboard shortcuts
+- ⚙️ Configurable application list
+- 🎯 Support for custom shortcuts
+- 📱 macOS system support
+- 🛠️ JetBrains product support with cursor position jumping
 
-## 安装
+## Installation
 
-1. 克隆此仓库到本地
-2. 在VSCode中打开项目文件夹
-3. 按 `F5` 启动调试模式，或使用 `Ctrl+Shift+P` 运行 "Developer: Reload Window"
+1. Clone this repository to your local machine
+2. Open the project folder in VSCode
+3. Press `F5` to start debug mode, or use `Ctrl+Shift+P` to run "Developer: Reload Window"
 
-## 使用方法
+## Usage
 
-### 基本使用
+### Basic Usage
 
-1. 按 `Cmd+Shift+1` 打开应用程序选择器
-2. 从列表中选择要打开的应用程序
-3. 应用程序将自动启动
+1. Press `Cmd+Shift+1` to open the application selector
+2. Select the application you want to open from the list
+3. The application will launch automatically
 
-### 配置应用程序
+### Configuring Applications
 
-在VSCode设置中配置您想要快速访问的应用程序：
+Configure the applications you want to quickly access in VSCode settings:
 
 ```json
 {
@@ -34,73 +34,72 @@
     {
       "name": "IntelliJ IDEA",
       "path": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
-      "type": "jetbrains",
-      "shortcut": "cmd+shift+1"
+      "type": "jetbrains"
     },
     {
       "name": "WebStorm",
       "path": "/Applications/WebStorm.app/Contents/MacOS/webstorm",
-      "type": "jetbrains",
-      "shortcut": "cmd+shift+2"
+      "type": "jetbrains"
     },
     {
       "name": "PyCharm",
       "path": "/Applications/PyCharm.app/Contents/MacOS/pycharm",
-      "type": "jetbrains",
-      "shortcut": "cmd+shift+3"
+      "type": "jetbrains"
     },
     {
       "name": "Chrome",
       "path": "/Applications/Google Chrome.app",
-      "type": "app",
-      "shortcut": "cmd+shift+4"
+      "type": "app"
     }
   ]
 }
 ```
 
-### 配置说明
+### Configuration Options
 
-- `name`: 应用程序的显示名称
-- `path`: 应用程序的完整路径
-- `type`: 应用程序类型
-  - `jetbrains`: JetBrains产品，支持跳转到光标位置
-  - `app`: 普通应用程序
-- `shortcut`: 快捷键组合（可选，目前使用默认快捷键）
+- `name`: Display name of the application
+- `path`: Full path to the application
+- `type`: Application type
+  - `jetbrains`: JetBrains products with cursor position support
+  - `app`: Regular applications
 
-### JetBrains产品支持
+### JetBrains Product Support
 
-对于JetBrains产品（如IntelliJ IDEA、WebStorm、PyCharm等），插件会：
-1. 获取当前光标位置
-2. 使用命令行参数 `--line` 和 `--column` 跳转到指定位置
-3. 自动打开对应的文件
+For JetBrains products (such as IntelliJ IDEA, WebStorm, PyCharm, etc.), the extension will:
+1. Get the current cursor position
+2. Use command line arguments `--line` and `--column` to jump to the specified position
+3. Automatically open the corresponding file
 
-## 开发
+## Development
 
-### 构建
+### Build
 
 ```bash
 npm install
 npm run compile
 ```
 
-### 测试
+### Test
 
 ```bash
 npm test
 ```
 
-### 打包
+### Package
 
 ```bash
 npm install -g vsce
 vsce package
 ```
 
-## 许可证
+## License
 
 MIT
 
-## 贡献
+## Contributing
 
-欢迎提交Issue和Pull Request！
+Issues and Pull Requests are welcome!
+
+---
+
+[中文文档](README.zh-CN.md)
