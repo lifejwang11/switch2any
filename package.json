@@ -1,0 +1,78 @@
+{
+  "name": "switch2any",
+  "displayName": "Switch2Any",
+  "description": "A VSCode extension for switching between different file types and formats",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lifejwang11/switch2any.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "switch2any.openApp",
+        "title": "Switch2Any: Open Application"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "switch2any.openApp",
+        "key": "cmd+shift+1",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Switch2Any",
+      "properties": {
+        "switch2any.apps": {
+          "type": "array",
+          "default": [
+            {
+              "name": "IntelliJ IDEA",
+              "path": "/Applications/IntelliJ IDEA.app/Contents/MacOS/idea",
+              "type": "jetbrains"
+            },
+            {
+              "name": "WebStorm",
+              "path": "/Applications/WebStorm.app/Contents/MacOS/webstorm",
+              "type": "jetbrains"
+            },
+            {
+              "name": "PyCharm",
+              "path": "/Applications/PyCharm.app/Contents/MacOS/PyCharm",
+              "type": "jetbrains"
+            },
+            {
+              "name": "Chrome",
+              "path": "/Applications/Google Chrome.app",
+              "type": "app"
+            }
+          ],
+          "description": "配置要打开的应用程序列表"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "typescript": "^4.9.5"
+  }
+}
